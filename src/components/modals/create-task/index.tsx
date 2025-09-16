@@ -29,13 +29,13 @@ export default function CreateTaskModal({
           .querySelector<HTMLButtonElement>("form button[type=submit]")
           ?.click()
       }
-      submitLabel={!isLoading ? "Creating..." : "Create"}
+      submitLabel={isLoading ? "Creating..." : "Create"}
     >
       <TaskForm
         initialValues={{ title: "", description: "", deadline: "" }}
         onSubmit={handleSubmit}
         submitLabel="Create"
-        isLoading={!isLoading}
+        isLoading={isLoading}
       />
     </BaseModal>
   );
