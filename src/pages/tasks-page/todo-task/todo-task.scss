@@ -1,0 +1,43 @@
+.todo-task-card {
+  margin-bottom: 16px;
+  border-left: 6px solid; // dynamic color stays inline
+  box-shadow: 3;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+
+.todo-task-card-content {
+  position: relative;
+  display: flex;
+}
+
+.todo-task-details {
+  width: 90%;
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .description {
+    margin-bottom: 8px;
+  }
+}
+
+.todo-task-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: -5px;
+
+  .drag-handle {
+    margin-top: 5px;
+    cursor: grab;
+  }
+}
+
+.confirm-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}

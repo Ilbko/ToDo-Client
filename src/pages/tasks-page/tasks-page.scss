@@ -1,0 +1,25 @@
+.add-task-box {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.task-column-paper {
+  padding: 16px;
+  min-height: 80vh;
+  border-radius: 16px;
+}
+
+.task-column-title {
+  margin-bottom: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.task-placeholder {
+  height: 100px;
+  border-radius: 16px;
+  background-color: transparent;
+  border: 2px dashed #ccc;
+  margin-bottom: 16px;
+}
