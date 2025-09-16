@@ -1,4 +1,3 @@
-import { CircularProgress, Stack } from "@mui/material";
 import BaseModal from "..";
 import { useUpdateTaskMutation } from "../../../services/api/tasksApi";
 import type { TaskItem, UpdateTaskDto } from "../../../types/task";
@@ -44,11 +43,6 @@ export default function EditTaskModal({
         submitLabel="Save"
         isLoading={isLoading}
       />
-      {isLoading && (
-        <Stack direction="row" justifyContent="center" mt={2}>
-          <CircularProgress size={24} />
-        </Stack>
-      )}
     </BaseModal>
   );
 }

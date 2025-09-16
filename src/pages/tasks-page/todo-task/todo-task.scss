@@ -1,6 +1,6 @@
 .todo-task-card {
   margin-bottom: 16px;
-  border-left: 6px solid; // dynamic color stays inline
+  border-left: 6px solid;
   box-shadow: 3;
   border-radius: 16px;
   transition: all 0.2s ease;
@@ -21,6 +21,9 @@
 
   .description {
     margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 

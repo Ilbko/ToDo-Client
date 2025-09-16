@@ -1,4 +1,3 @@
-import { CircularProgress, Stack } from "@mui/material";
 import BaseModal from "..";
 import { useCreateTaskMutation } from "../../../services/api/tasksApi";
 import type { CreateTaskDto } from "../../../types/task";
@@ -30,19 +29,14 @@ export default function CreateTaskModal({
           .querySelector<HTMLButtonElement>("form button[type=submit]")
           ?.click()
       }
-      submitLabel={isLoading ? "Creating..." : "Create"}
+      submitLabel={!isLoading ? "Creating..." : "Create"}
     >
       <TaskForm
         initialValues={{ title: "", description: "", deadline: "" }}
         onSubmit={handleSubmit}
         submitLabel="Create"
-        isLoading={isLoading}
+        isLoading={!isLoading}
       />
-      {isLoading && (
-        <Stack direction="row" justifyContent="center" mt={2}>
-          <CircularProgress size={24} />
-        </Stack>
-      )}
     </BaseModal>
   );
 }

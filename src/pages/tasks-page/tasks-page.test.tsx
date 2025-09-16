@@ -10,7 +10,6 @@ vi.mock("../../services/api/tasksApi", () => ({
   useUpdateTaskMutation: () => mockUseUpdateTaskMutation(),
 }));
 
-// Mock child components
 vi.mock("../../components/modals/create-task", () => ({
   default: ({ open }: { open: boolean }) => (
     <div data-testid="create-task-modal">{open ? "Modal Open" : null}</div>
@@ -95,14 +94,6 @@ describe("TasksPage", () => {
 
     const activeTask = tasksMock[0];
     const overTask = tasksMock[1];
-
-    const dragEndEvent = {
-      active: { id: activeTask.id },
-      over: { id: overTask.id },
-    };
-
-    const { container } = render(<TasksPage />);
-    const instance: any = container.firstChild;
 
     await mockUpdateTask({
       id: activeTask.id,

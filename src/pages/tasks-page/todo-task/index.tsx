@@ -73,13 +73,9 @@ export const TodoTask = ({ task }: { task: TaskItem }) => {
             </Typography>
             <Typography
               variant="caption"
-              color={
-                new Date(task.deadline) < new Date()
-                  ? "error"
-                  : "text.secondary"
-              }
+              color={isDateOverdue(task.deadline) ? "error" : "text.secondary"}
             >
-              Deadline: {task.deadline}
+              Deadline: {getFormattedDate(task.deadline)}
             </Typography>
           </div>
           <Box className="todo-task-actions">
@@ -113,4 +109,18 @@ export const TodoTask = ({ task }: { task: TaskItem }) => {
       </Dialog>
     </>
   );
+};
+
+const getFormattedDate = (date: string) => {
+  return new Date(date).toLocaleString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+};
+
+const isDateOverdue = (date: string) => {
+  return new Date(date) < new Date();
 };
